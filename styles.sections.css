@@ -1,0 +1,165 @@
+main section.brand::after {
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  height: 80px;
+  width: 80px;
+  left: calc(50% - 40px);
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pjxzdmcgdmlld0JveD0iMCAwIDI1NiAyNTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3QgZmlsbD0ibm9uZSIgaGVpZ2h0PSIyNTYiIHdpZHRoPSIyNTYiLz48cGF0aCBkPSJNOTQsNjEuNGEyMCwyMCwwLDAsMSwzNC42LTIwbDMwLDUxLjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2MDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHBhdGggZD0iTTY3LjQsOTUuMmwtMTYtMjcuN0EyMCwyMCwwLDAsMSw4Niw0Ny41bDM0LDU4LjkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2MDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHBhdGggZD0iTTE1NCwxNjUuM2EzOS45LDM5LjksMCwwLDEsMTQuNi01NC42bC0xMC0xNy40YTIwLDIwLDAsMCwxLDM0LjctMjBsMjAsMzQuN0E4MCw4MCwwLDAsMSw3NC43LDE4OGwtNDItNzIuOGEyMCwyMCwwLDAsMSwzNC43LTIwbDIyLDM4LjEiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY2MDA4MCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIiBzdHJva2Utd2lkdGg9IjE2Ii8+PHBhdGggZD0iTTgxLjEsMjQwQTExMC4zLDExMC4zLDAsMCwxLDQ4LDIwNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjYwMDgwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMTYiLz48cGF0aCBkPSJNMTc2LDMxYTUxLjcsNTEuNywwLDAsMSw0NSwyNiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNjYwMDgwIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMTYiLz48L3N2Zz4=");
+  opacity: 0.6;
+}
+main section.brand div {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "logo title"
+    "logo subtitle";
+  text-align: left;
+}
+main section.brand div img {
+  grid-area: logo;
+  width: 140px;
+  margin: 0 auto;
+}
+main section.brand div img.rounded {
+  border-radius: 0;
+}
+main section.brand div h1 {
+  font-size: calc(3rem + 2vw);
+  padding: 0;
+}
+main section.brand div h1,
+main section.brand div h2 {
+  text-align: center;
+}
+
+main section.intro,
+main section.intro > div {
+  background-color: rgba(var(--brand-green), 0.2);
+}
+
+main section.details {
+}
+
+main section.testimonials,
+main section.testimonials > div {
+  background-color: rgba(var(--brand-yellow), 0.2);
+}
+main section.testimonials div {
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+main section.testimonials div .card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  justify-content: space-between;
+  color: rgba(81, 66, 51, 0.9);
+}
+main section.testimonials div .card h3 {
+  margin: .5rem 0;
+  color: rgba(81, 66, 51, 0.9);
+  font-size: 1.2rem;
+}
+
+main section.testimonials div .card p {
+  font-size: 1rem;
+}
+
+main section.testimonials div .card .visual {
+  box-sizing: border-box;
+  height: 160px;
+  width: 160px;
+  margin: 0 auto;
+  border-radius: 33%;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-position: center;
+  background-size: cover;
+  opacity: 0.9;
+  border: 5px solid rgba(81, 66, 51, 0.6);
+}
+
+main section.cta div {
+  display: grid;
+  place-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+main section.principles {
+}
+
+main section.gallery,
+main section.gallery > div {
+  background-color: rgba(var(--brand-red), 0.2);
+}
+main section.gallery div#flick {
+  cursor: pointer;
+}
+main section.gallery div.flicking-panel {
+  margin: 1rem;
+  align-self: center;
+}
+main section.gallery div.flicking-panel img {
+  width: 500px; /* keep a constant width! */
+  box-shadow: 2px 2px 1px rgba(255, 255, 255, 0.5),
+    -2px 2px 1px rgba(255, 255, 255, 0.5);
+}
+main section.gallery div.flicking-panel img:hover {
+  box-shadow: 18px 0px 5px rgba(255, 251, 0, 0.3),
+    -18px 0px 5px rgba(255, 251, 0, 0.3);
+}
+
+main section.accessories {
+}
+main section.accessories h2 {
+  margin-top: 1rem;
+}
+main section.accessories div.accessories-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+main section.accessories div.accessories-images img.accessory {
+  max-width: 225px;
+  min-height: 166px;
+  object-fit: cover;
+  border-radius: 5px;
+  transform: rotateZ(3deg);
+  transition: 0.5s ease-out;
+  box-shadow: 4px 4px 4px rgba(55, 55, 55, 0.5);
+}
+main section.accessories div.accessories-images img.accessory:hover {
+  box-shadow: 6px 6px 4px rgba(235, 255, 52, 0.5);
+}
+
+main section.floor-plans,
+main section.floor-plans > div {
+  background-color: rgba(var(--brand-green), 0.2);
+}
+
+/***********************/
+
+@media screen and (max-width: 600px) {
+  main section.brand div {
+    grid-template-areas:
+      "logo"
+      "title"
+      "subtitle";
+  }
+  main section.accessories div.accessories-images img.accessory {
+    max-width: 125px;
+  }
+  main section.testimonials div .card {
+    padding: 1rem;
+  }
+  main section.testimonials div .card .visual {
+    height: 25vw;
+    width: 25vw;
+  }
+}

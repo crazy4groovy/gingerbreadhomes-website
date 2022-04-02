@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Waiting List | Gingerbread Homes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+    <script src="https://unpkg.com/@egjs/flicking@4.5.1/dist/flicking.pkgd.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@egjs/flicking@4.5.1/dist/flicking.css"
+    />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    /> -->
+    <link rel="stylesheet" href="./animate.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+      integrity="sha256-z6FznuNG1jo9PP3/jBjL6P3tvLMtSwiVAowZPOgo56U="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./styles.main.css" />
+    <link rel="stylesheet" href="./styles.sections.css" />
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <a href="./">Home</a> | <a href="./#gallery">Gallery</a> |
+        <a href="http://eepurl.com/hZq6AH">e-Newsletter</a> |
+        <a href="./waiting-list.html">Waiting List</a>
+      </div>
+    </header>
+    <main>
+      <section class="waiting-list wow fadeIn" data-wow-delay="0s">
+        <div class="wow bounceIn" data-wow-delay="0s">
+          <h1>GB Home Waiting List</h1>
+          <h2>
+            We're thrilled that you're applying to our waiting list for the next
+            available Gingerbread home!
+          </h2>
+          <h3>
+            We'll be sure to contact you with more details as soon as the next
+            opportunity arises.
+          </h3>
+          <form action="https://formspree.io/f/mjvlargj" method="POST">
+            <label>
+              Your full name:
+              <input type="text" name="name" autofocus />
+            </label>
+            <label>
+              Your email:
+              <input type="email" name="email" />
+            </label>
+            <label>
+              Your message to us (optional):
+              <textarea name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <input type="text" name="_gotcha" style="display: none" />
+            <button type="submit">Apply Now</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
