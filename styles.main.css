@@ -38,6 +38,10 @@ img.rounded {
 header {
   text-align: center;
   padding: 1em;
+  background-color: rgba(255, 223, 119, 0.2);
+  /* position: sticky;
+  top: 0;
+  z-index: 100; */
 }
 
 hr {
@@ -107,13 +111,14 @@ main section h3 {
 }
 
 main section p {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 main section ul {
-  width: 65vw;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 0px;
 }
 main section li {
   list-style: none;
