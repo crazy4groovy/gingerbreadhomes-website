@@ -31,7 +31,9 @@ async function initGallery() {
   });
 
   const galleryBody = galleryImages.map((img) => {
-    return `<div class="flicking-panel"><img loading="lazy" alt="${img.title}" title="${img.title}" src="${img.image}"></div>`;
+    return `<div class="flicking-panel">
+    <img loading="lazy" alt="${img.title}" title="${img.title}" src="${img.image}" draggable="false" ondragstart="return false;">
+    </div>`;
   });
 
   function clickShowGallery() {
