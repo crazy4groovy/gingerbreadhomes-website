@@ -1,28 +1,9 @@
 async function initGallery() {
-  const baseUrl =
-    "https://storage.googleapis.com/wzukusers/user-30100752/images/";
+  const galleryImages = await fetch("./gallery/list.json").then((r) =>
+    r.json()
+  );
 
-  const galleryImages = await fetch("./gallery/data.images.json")
-    .then((r) => r.json())
-    .then((d) => {
-      // console.log(d);
-      let r = [];
-      Object.keys(d).forEach((k) => {
-        const o = d[k];
-        const i = {};
-        i.title = o.title;
-        if (o.description !== "Description") i.description = o.description;
-        // i.thumb = o.image.imageUrl.thumbPath;
-        i.image = baseUrl + o.image.imageUrl.imagePath;
-        // RESIZE
-        i.image = i.image.replace(".JPG", "_d600.JPG");
-        r.push(i);
-      });
-      r.pop(); // last item is weird data
-      return r;
-    });
-
-  // console.log(galleryImages);
+  console.log(JSON.stringify(galleryImages, null, 2));
 
   const flicking = new Flicking("#flick.gallery", {
     // renderOnlyVisible: true,
@@ -31,8 +12,9 @@ async function initGallery() {
   });
 
   const galleryBody = galleryImages.map((img) => {
+    const desc = [img.title, img.description].filter(Boolean).join(' -- ')
     return `<div class="flicking-panel">
-    <img loading="lazy" alt="${img.title}" title="${img.title}" src="${img.image}" draggable="false" ondragstart="return false;">
+    <img loading="lazy" alt="${desc}" title="${desc}" src="${img.image}" draggable="false" ondragstart="return false;">
     </div>`;
   });
 
@@ -96,7 +78,7 @@ async function initTestimonials() {
   let times = (Math.random() * data.length) | 0;
   while (--times > 0) {
     data.unshift(data.pop());
-    console.log(times)
+    console.log(times);
   }
   data = data.slice(0, cardEls.length);
   data.forEach((q, i) => {
