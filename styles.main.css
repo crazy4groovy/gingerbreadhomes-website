@@ -110,7 +110,8 @@ main section h3 {
   padding-bottom: 1rem;
 }
 
-main section p {
+main section p,
+main article p {
   font-size: 1.5rem;
 }
 
