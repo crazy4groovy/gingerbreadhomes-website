@@ -18,7 +18,7 @@ https://1linelayouts.glitch.me/
 
 ### Button management
 
-[link](https://www.paypal.com/cgi-bin/webscr?cmd=_button-management&login_cmd=_button-management)
+[link](https://www.paypal.com/ca/cgi-bin/webscr?cmd=_button-management)
 [link](https://www.paypal.com/buttons/)
 
 $1: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6XB3AVTNRRXRS
