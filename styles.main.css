@@ -85,7 +85,8 @@ main section > div {
   padding-bottom: 8em;
 }
 
-main section h1 {
+main section h1,
+main article h1 {
   font-family: MouseMemoirs;
   font-size: 4rem;
   font-size: calc(3rem + 1vw);
@@ -96,15 +97,26 @@ main section h1 {
   margin: 0;
   padding-bottom: 3rem;
 }
-main section h1:last-child {
+main section h1:last-child,
+main article h1:last-child {
   padding: 0;
 }
-main section h2 {
+main article h1 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+main section h2,
+main article h2 {
   color: rgba(var(--brand-purple), 0.9);
   margin: 0;
   padding-bottom: 1rem;
 }
-main section h3 {
+main article h2 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+main section h3,
+main article h3 {
   color: rgba(var(--brand-purple), 0.6);
   margin: 0;
   padding-bottom: 1rem;
