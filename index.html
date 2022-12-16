@@ -45,6 +45,7 @@
       integrity="sha256-z6FznuNG1jo9PP3/jBjL6P3tvLMtSwiVAowZPOgo56U="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="./styles.main.css" />
     <link rel="stylesheet" href="./styles.sections.css" />
   </head>
@@ -345,5 +346,11 @@
       );
     </script>
     <script async type="module" src="./scripts.js"></script>
+    <script async>
+      confetti.create(null, {
+        resize: true,
+        useWorker: true,
+      })({ particleCount: 200, spread: 200 });
+    </script>
   </body>
 </html>
