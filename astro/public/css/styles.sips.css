@@ -1,0 +1,43 @@
+article {
+  padding: 0 1em;
+  margin: 2em auto;
+  max-width: 800px;
+}
+div.grid {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: auto auto;
+}
+div.grid img,
+div.grid p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+div.grid.photos img {
+  max-width: 200px;
+}
+article img {
+  box-shadow: 4px 4px 2px rgba(200, 200, 200, 0.5);
+  margin: 0 auto;
+  margin: 1rem;
+  border-radius: 5px;
+}
+
+p.quote {
+  font-style: italic;
+  color: lightseagreen;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: .2s transform;
+}
+p.quote:hover {
+  font-style: italic;
+  color: rgb(31, 196, 187);
+  transform: scale(1.2) translateX(60px);
+}
+
+li {
+  font-size: 1.4rem;
+}
