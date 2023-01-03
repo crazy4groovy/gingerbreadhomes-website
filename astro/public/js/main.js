@@ -2,9 +2,8 @@ async function initGallery() {
   const galleryImages = await fetch("../gallery/list.json").then((r) =>
     r.json()
   );
-  debugger;
 
-  console.log(JSON.stringify(galleryImages, null, 2));
+  // console.log(JSON.stringify(galleryImages, null, 2));
 
   const flicking = new Flicking("#flick.gallery", {
     // renderOnlyVisible: true,

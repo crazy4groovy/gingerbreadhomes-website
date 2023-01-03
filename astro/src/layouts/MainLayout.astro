@@ -3,7 +3,8 @@ import BaseHead from "./BaseHead.astro";
 
 export interface Props {
   title?: string;
-  css?: string
+  css?: string;
+  confetti?: boolean;
 }
 
 const { props } = Astro;
@@ -27,9 +28,9 @@ const { props } = Astro;
 
     <header>
       <div class="menu">
-        <a href="./">Home</a> | <a href="#gallery">Gallery</a> |
+        <a href="/">Home</a> | <a href="/#gallery">Gallery</a> |
         <a href="http://eepurl.com/hZq6AH">e-Newsletter</a> |
-        <a href="./waiting-list.html">Waiting List</a>
+        <a href="/waiting-list.html">Waiting List</a>
       </div>
     </header>
 

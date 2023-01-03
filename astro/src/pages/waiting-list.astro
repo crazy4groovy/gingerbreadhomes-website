@@ -1,0 +1,47 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="WAITING LIST">
+  <section class="waiting-list wow fadeIn" data-wow-delay="0s">
+    <div class="wow bounceIn" data-wow-delay="0s">
+      <h1>Waiting List</h1>
+      <h2>
+        We're thrilled that you're applying to our waiting list for the next
+        available gingerbread home!
+      </h2>
+      <h3>
+        We'll be sure to contact you with more details as soon as the next
+        opportunity arises.
+      </h3>
+      <form action="https://formspree.io/f/mjvlargj" method="POST">
+        <label>
+          Your full name:
+          <input type="text" name="name" autofocus />
+        </label>
+        <label>
+          Your email:
+          <input type="email" name="email" />
+        </label>
+        <label>
+          Your message to us (optional):
+          <textarea name="message"></textarea>
+        </label>
+        <!-- your other form fields go here -->
+        <input type="text" name="_gotcha" style="display: none" />
+        <button type="submit">Apply Now</button>
+      </form>
+      <hr />
+      <p>
+        Or, you can instead make a down payment <a href="./down-payment">here</a>!
+      </p>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  input,
+  textarea {
+    background-color: white;
+  }
+</style>

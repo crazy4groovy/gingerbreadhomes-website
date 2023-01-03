@@ -6,6 +6,7 @@ export interface Props {
   description?: string;
   css?: string;
   image?: string;
+  confetti?: boolean;
 }
 
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
@@ -15,15 +16,16 @@ const {
   description = SITE_DESCRIPTION,
   css,
   image = "/social.webp",
+  confetti = false,
 } = Astro.props;
 ---
 
 <!-- Google Tag Manager -->
 <script>
-  (function (w, d, s, l, i) {
+  (function (w: any, d, s, l: string, i) {
     w[l] = w[l] || [];
     w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-    var f = d.getElementsByTagName(s)[0],
+    var f: any = d.getElementsByTagName(s)[0],
       j = d.createElement(s) as any,
       dl = l != "dataLayer" ? "&l=" + l : "";
     j.async = true;
@@ -83,10 +85,10 @@ const {
 />
 
 <!-- STYLES -->
-<link rel="stylesheet" href="css/animate.css" />
-<link rel="stylesheet" href="css/styles.main.css" />
-<link rel="stylesheet" href="css/styles.sections.css" />
-{css && <link href={`css/styles.${css}.css`} />}
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/styles.main.css" />
+<link rel="stylesheet" href="/css/styles.sections.css" />
+{css && <link rel="stylesheet" href={`/css/styles.${css}.css`} />}
 
 <!-- SCRIPTS -->
 <script
@@ -100,8 +102,22 @@ const {
   crossorigin="anonymous"
 ></script>
 <script
+  is:inline
   src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
 ></script>
-<script is:inline async defer src="js/main.js"></script>
+<script is:inline async defer src="/js/main.js"></script>
+{confetti &&
+<script
+  is:inline
+  async
+  defer
+>
+setTimeout(() => {
+  confetti.create(null, {
+    resize: true,
+    useWorker: true,
+  })({ particleCount: 200, spread: 200 });
+}, 100)
+</script>}
 
 <!-- END SCRIPTS -->
