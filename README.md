@@ -2,6 +2,10 @@
 
 https://gingerbreadhomes.biz/
 
+## Project Folder
+
+`/astro`
+
 ## Web dev resources
 
 https://1linelayouts.glitch.me/

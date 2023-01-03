@@ -1,0 +1,107 @@
+---
+import BaseHead from "./BaseHead.astro";
+
+export interface Props {
+  title?: string;
+  css?: string;
+  confetti?: boolean;
+}
+
+const { props } = Astro;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead {...props} />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KSRB3SN"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <header>
+      <div class="menu">
+        <a href="/">Home</a> | <a href="/#gallery">Gallery</a> |
+        <a href="http://eepurl.com/hZq6AH">e-Newsletter</a> |
+        <a href="/waiting-list">Waiting List</a>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      Find out more <a href="/about-us">About Us</a>
+      <br />
+      <br />
+      Learn about our <a href="/sips">SIPS and NetZero</a> features
+      <br />
+      <br />
+      Ready to buy? Make a <a href="/down-payment">down payment</a>!
+      <br />
+      <br />
+      Email: dajohnson162000@hotmail.com
+      <br />
+      Telephone: 403.653.1456
+      <br />
+      Address: Box 2695, Cardston, AB Canada T0K0K0
+      <br />
+      ©2021 All Rights Reserved
+      <br />
+      <ul class="share-buttons" data-source="gingerbreadhomes.biz">
+        <li>
+          <a
+            href="mailto:dajohnson162000@hotmail.com"
+            title="email"
+            target="_blank"
+            ><img alt="Email" src="/images/social/Email.png" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/COREStrength/"
+            href-share="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgingerbreadhomes.biz&quote=Gingerbread%20homes"
+            title="Facebook"
+            target="_blank"
+            ><img alt="Facebook" src="/images/social/Facebook.png" />
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/dajohnson162000"
+            href-share="https://twitter.com/intent/tweet?source=http%3A%2F%2Fgingerbreadhomes.biz&text=Gingerbread%20homes:%20http%3A%2F%2Fgingerbreadhomes.biz&via=dajohnson162000"
+            target="_blank"
+            title="Twitter"
+            ><img alt="Twitter" src="/images/social/Twitter.png" />
+          </a>
+        </li>
+        <!-- <li>
+          <a
+            href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fgingerbreadhomes.biz&media=https://gingerbreadhomes.biz/images/logo_v3.webp&description=Family-Friendly%20Living%20Space!%0AAll-Natural%20Materials%0A21%20Years%20of%20Experience"
+            target="_blank"
+            title="Pin it"
+            ><img alt="Pin it" src="images/social/Pinterest.png"
+          /></a>
+        </li> -->
+        <li>
+          <a
+            href="https://www.linkedin.com/in/david-johnson-66454733/"
+            href-share="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgingerbreadhomes.biz&title=Gingerbread%20homes&summary=Family-Friendly%20Living%20Space!%0AAll-Natural%20Materials%0A21%20Years%20of%20Experience&source=http%3A%2F%2Fgingerbreadhomes.biz"
+            target="_blank"
+            title="LinkedIn"
+            ><img alt="LinkedIn" src="/images/social/LinkedIn.png" />
+          </a>
+        </li>
+      </ul>
+    </footer>
+
+  </body>
+</html>

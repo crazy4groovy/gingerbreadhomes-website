@@ -1,9 +1,9 @@
 async function initGallery() {
-  const galleryImages = await fetch("./gallery/list.json").then((r) =>
+  const galleryImages = await fetch("../gallery/list.json").then((r) =>
     r.json()
   );
 
-  console.log(JSON.stringify(galleryImages, null, 2));
+  // console.log(JSON.stringify(galleryImages, null, 2));
 
   const flicking = new Flicking("#flick.gallery", {
     // renderOnlyVisible: true,
@@ -14,7 +14,7 @@ async function initGallery() {
   const galleryBody = galleryImages.map((img) => {
     const desc = [img.title, img.description].filter(Boolean).join(' -- ')
     return `<div class="flicking-panel">
-    <img loading="lazy" alt="${desc}" title="${desc}" src="${img.image}" draggable="false" ondragstart="return false;">
+    <img loading="lazy" alt="${desc}" title="${desc}" src=".${img.image}" draggable="false" ondragstart="return false;">
     </div>`;
   });
 
@@ -34,7 +34,7 @@ initGallery();
 
 async function initAccessories() {
   const imgs = await (
-    await fetch("./accessories/index.txt").then((r) => r.text())
+    await fetch("../accessories/index.txt").then((r) => r.text())
   )
     .split("\n")
     .filter(Boolean);
@@ -74,7 +74,7 @@ initAccessories();
 
 async function initTestimonials() {
   const cardEls = document.querySelectorAll(".testimonials .card");
-  let data = await fetch("./testimonials/data.json").then((r) => r.json());
+  let data = await fetch("../testimonials/data.json").then((r) => r.json());
   let times = (Math.random() * data.length) | 0;
   while (--times > 0) {
     data.unshift(data.pop());

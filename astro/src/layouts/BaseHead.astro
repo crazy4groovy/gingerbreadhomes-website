@@ -1,0 +1,123 @@
+---
+import "./BaseHead.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+  css?: string;
+  image?: string;
+  confetti?: boolean;
+}
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+
+const {
+  title = SITE_TITLE,
+  description = SITE_DESCRIPTION,
+  css,
+  image = "/social.webp",
+  confetti = false,
+} = Astro.props;
+---
+
+<!-- Google Tag Manager -->
+<script>
+  (function (w: any, d, s, l: string, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f: any = d.getElementsByTagName(s)[0],
+      j = d.createElement(s) as any,
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-KSRB3SN");
+</script>
+<!-- End Google Tag Manager -->
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@egjs/flicking@4.5.1/dist/flicking.css"
+/>
+
+<!-- STYLES -->
+<link rel="stylesheet" href="/css/animate.css" />
+<link rel="stylesheet" href="/css/styles.main.css" />
+<link rel="stylesheet" href="/css/styles.sections.css" />
+{css && <link rel="stylesheet" href={`/css/styles.${css}.css`} />}
+
+<!-- SCRIPTS -->
+<script
+  is:inline
+  src="https://unpkg.com/@egjs/flicking@4.5.1/dist/flicking.pkgd.min.js"
+></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+  integrity="sha256-z6FznuNG1jo9PP3/jBjL6P3tvLMtSwiVAowZPOgo56U="
+  crossorigin="anonymous"
+></script>
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"
+></script>
+<script is:inline async defer src="/js/main.js"></script>
+{confetti &&
+<script
+  is:inline
+  async
+  defer
+>
+setTimeout(() => {
+  confetti.create(null, {
+    resize: true,
+    useWorker: true,
+  })({ particleCount: 200, spread: 200 });
+}, 100)
+</script>}
+
+<!-- END SCRIPTS -->
