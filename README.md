@@ -2,10 +2,6 @@
 
 https://gingerbreadhomes.biz/
 
-## Project Folder
-
-`/astro`
-
 ## Web dev resources
 
 https://1linelayouts.glitch.me/
@@ -27,3 +23,7 @@ https://1linelayouts.glitch.me/
 
 $1: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6XB3AVTNRRXRS
 $1000: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YHVNDGHB2WDPJ
+
+## 👀 Want to learn more about Astro?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
