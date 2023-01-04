@@ -73,7 +73,7 @@ ${authName ? `author: ${authName}` : ""}
 ${contentMD.replace(/\\n/g, "\n\n")}
 `;
 
-  console.log(path.join(process.cwd(), destFolder, fname), postFileMD, "utf8");
+  // console.log(path.join(process.cwd(), destFolder, fname), postFileMD, "utf8");
 
   fs.writeFileSync(path.join(process.cwd(), destFolder, fname), postFileMD, "utf8");
 
