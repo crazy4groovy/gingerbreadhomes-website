@@ -8,7 +8,7 @@ import { parse as parseCsv } from "csv-parse/sync";
 import slugify from "slugify";
 // import marked from 'https://cdn.skypack.dev/marked';
 
-const destFolder = "./src/pages/blog";
+const destFolder = "/src/pages/blog";
 
 async function readSheet(
   key,
@@ -73,9 +73,9 @@ ${authName ? `author: ${authName}` : ""}
 ${contentMD.replace(/\\n/g, "\n\n")}
 `;
 
-  // console.log(postFileMD);
+  console.log(path.join(process.cwd(), destFolder, fname), postFileMD, "utf8");
 
-  fs.writeFileSync(path.join(destFolder, fname), postFileMD, "utf8");
+  fs.writeFileSync(path.join(process.cwd(), destFolder, fname), postFileMD, "utf8");
 
   return postFileMD;
 });

@@ -78,7 +78,6 @@ async function initTestimonials() {
   let times = (Math.random() * data.length) | 0;
   while (--times > 0) {
     data.unshift(data.pop());
-    console.log(times);
   }
   data = data.slice(0, cardEls.length);
   data.forEach((q, i) => {
