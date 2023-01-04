@@ -1,0 +1,60 @@
+---
+import BlogPostsList from "./BlogPostsList.astro";
+
+export interface Props {
+  posts?: any[];
+  url: any;
+}
+
+const { posts = [], url } = Astro.props;
+---
+
+<h1>Posts</h1>
+
+<BlogPostsList posts={posts} />
+
+<div class="pagination">
+  {
+    url?.prev ? (
+      <a href={url.prev} rel="prefetch">
+        ⏮ Previous
+      </a>
+    ) : null
+  }
+  {
+    url?.next ? (
+      <a href={url.next} rel="prefetch">
+        Next ⏭
+      </a>
+    ) : null
+  }
+</div>
+
+<style>
+  .nav-box {
+    display: flex;
+    padding: min(2rem, 4vw);
+    padding-right: min(6rem, 4vw);
+  }
+  .nav-box > div {
+    flex: 1;
+  }
+  :global(nav) {
+    max-width: 560px;
+    flex: 1;
+  }
+  h1,
+  h3 {
+    max-inline-size: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  h3 {
+    font-size: 1rem;
+    color: turquoise;
+  }
+  .pagination {
+    display: flex;
+    justify-content: space-evenly;
+  }
+</style>

@@ -1,0 +1,88 @@
+---
+export interface Props {
+  post: any;
+}
+
+const { post } = Astro.props;
+
+// console.log(post);
+
+const timeStamp = new Date(post.frontmatter.pubDate).toLocaleDateString(
+  "en-us",
+  {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }
+);
+---
+
+<a class="card" href={post.url} rel="prefetch">
+  <div>
+    {
+      post.frontmatter.heroImage && (
+        <div class="hero">
+          <img
+            loading="lazy"
+            src={post.frontmatter.heroImage}
+            alt="hero image"
+          />
+        </div>
+      )
+    }
+    <div class="body">
+      <time datetime={post.frontmatter.pubDate}>{timeStamp}</time>
+      <h1 class="title">{post.frontmatter.title}</h1>
+      <div class="read-more">Read More &gt;&gt;</div>
+    </div>
+  </div>
+</a>
+
+<style>
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 100%;
+    padding-bottom: 4rem;
+  }
+  .hero {
+    width: 100%;
+    height: 200px;
+  }
+  img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 1rem;
+  }
+  .body {
+    padding: 1rem;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  h1 {
+    font-size: max(1.4rem, 0.5vw);
+    padding: 2px;
+  }
+  time {
+    font-size: 0.8rem;
+    color: turquoise;
+  }
+  h1,
+  time {
+    text-align: center;
+    display: block;
+    max-inline-size: none;
+  }
+  .read-more {
+    padding-top: 5px;
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.6rem;
+    text-align: center;
+    color: turquoise;
+  }
+</style>
