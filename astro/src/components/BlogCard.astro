@@ -45,6 +45,19 @@ const timeStamp = new Date(post.frontmatter.pubDate).toLocaleDateString(
     justify-content: end;
     width: 100%;
     padding-bottom: 4rem;
+    border-radius: 1rem;
+    color: yellow;
+    transition: all 0.2s;
+    border: 2px solid #eee;
+    background-color: rgba(250, 250, 250, 0.5);
+  }
+  .card:hover {
+    transform: scale(1.02);
+    -webkit-box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff,
+      5px 5px 5px 5px rgba(255, 255, 255, 0.5);
+    box-shadow: 5px 5px 0px 0px #289fed, 10px 10px 0px 0px #5fb8ff,
+      5px 5px 5px 5px rgba(255, 255, 255, 0.5);
+    text-decoration: none;
   }
   .hero {
     width: 100%;
@@ -70,19 +83,16 @@ const timeStamp = new Date(post.frontmatter.pubDate).toLocaleDateString(
   }
   time {
     font-size: 0.8rem;
-    color: turquoise;
+    color: #c5e8ca;
   }
   h1,
   time {
     text-align: center;
-    display: block;
-    max-inline-size: none;
   }
   .read-more {
-    padding-top: 5px;
     font-family: "Work Sans", sans-serif;
-    font-size: 0.6rem;
+    font-size: 1rem;
     text-align: center;
-    color: turquoise;
+    color: rgb(224, 149, 64);
   }
 </style>

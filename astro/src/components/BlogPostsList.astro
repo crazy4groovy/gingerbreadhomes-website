@@ -25,24 +25,6 @@ const { posts } = Astro.props;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     padding: max(2rem, 4vw);
-    gap: 1rem;
-  }
-  ul {
-    list-style-type: none;
-    padding: unset;
-  }
-  ul li {
-    display: flex;
-    /* outline: 1px solid red; */
-    max-inline-size: none;
-    padding-inline-start: revert;
-  }
-  ul li time {
-    flex: 0 0 130px;
-    font-style: italic;
-    color: #595959;
-  }
-  ul li a:visited {
-    color: #8e32dc;
+    gap: 2rem;
   }
 </style>
