@@ -2,7 +2,7 @@
 @import 'https://unpkg.com/open-props';
 
 :root {
-  --accent: rgb(124, 58, 237);
+  --accent: hsl(269, 100%, 64%);
   --accent-gradient: linear-gradient(45deg,
       var(--accent),
       #da62c4 30%,

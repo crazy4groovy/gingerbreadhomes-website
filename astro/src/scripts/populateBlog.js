@@ -20,7 +20,7 @@ async function readSheet(
 }
 
 const postsCsv = await readSheet(
-  "1r_kZ7V8w-yKg3DP4mc4LyqDGn69KufXvltM4QIDZaS8",
+  "1nXQhrRFIt92LTiKHFWQ9YezjbgdbLqDM-8LSzQVDhEQ",
   "Posts"
 );
 
