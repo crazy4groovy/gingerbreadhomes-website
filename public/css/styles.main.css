@@ -198,3 +198,8 @@ form label {
   text-align: left;
   line-height: 2rem;
 }
+
+p strong {
+  color: #222;
+  font-weight: bold;
+}
