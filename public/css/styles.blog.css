@@ -4,6 +4,7 @@ main section li::before {
 
 main section h1 {
   padding: 1rem;
+  line-height: 5rem;
 }
 
 main section.brand div h1 {
