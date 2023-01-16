@@ -38,8 +38,8 @@ const timeStamp = pubDate
 
     {timeStamp && <time>{timeStamp}</time>}
 
-    <!-- <div class="hr"></div>
-    <hr /> -->
+    <div class="hr"></div>
+    <!-- <hr /> -->
 
     <slot /><!-- Article Post inserted here -->
   </article>
@@ -55,7 +55,7 @@ const timeStamp = pubDate
     width: 100%;
     max-height: 600px;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
     border-radius: 1rem;
   }
   h1 {
