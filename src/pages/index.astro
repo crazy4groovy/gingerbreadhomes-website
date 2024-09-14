@@ -10,8 +10,18 @@ import MainLayout from "../layouts/MainLayout.astro";
       <h2>COTTAGE BUILDER</h2>
     </div>
   </section>
-  <section class="intro">
+  <section class="cta">
     <div>
+      <button
+        class="main"
+        onclick="javascript:document.location='/blog/tree-fort-my-first-house'"
+      >
+        READ: From a Humble Tree Fort To Family Company 🌳🏡
+      </button>
+    </div>
+  </section>
+  <section class="intro">
+    <div class="img-house1">
       <h1>Fun, family-friendly spaces</h1>
       <h1>Built-in furniture, office, library</h1>
       <h1>Self-sufficient, green-housing, solar powered</h1>
@@ -108,27 +118,17 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
   <section class="gallery" id="gallery">
     <div>
-      <h1>🎞️ GALLERY 🎞️</h1>
-      <div><button class="gallery-show">Show Me!</button></div>
-      <div id="flick" class="flicking-viewport gallery">
-        <div class="flicking-camera"></div>
-      </div>
+      <h1>🎞️ PHOTO GALLERY 🎞️</h1>
+      <div><button class="gallery-show">Click To See</button></div>
       <p
         style="font-size: 1rem; opacity: 0.8; display: none"
         class="gallery-instructions"
       >
-        ⏪ flick sideways ⏩
+        ⏪ flick images sideways ⏩
       </p>
-    </div>
-  </section>
-  <section class="cta">
-    <div>
-      <button
-        class="main"
-        onclick="javascript:document.location='http://eepurl.com/hZq6AH'"
-      >
-        Subscribe today!
-      </button>
+      <div id="flick" class="flicking-viewport gallery">
+        <div class="flicking-camera"></div>
+      </div>
     </div>
   </section>
   <!--section class="accessories">
@@ -188,4 +188,13 @@ import MainLayout from "../layouts/MainLayout.astro";
   </section>
 </MainLayout>
 
-<style></style>
+<style>
+  .img-house1 {
+    background-image: url("/gallery/IMG_1359-2.JPG");
+    background-repeat: no-repeat;
+    /* fit image to screen */
+    background-size: cover;
+    /* dim opacity */
+    background-blend-mode: multiply;
+  }
+</style>
