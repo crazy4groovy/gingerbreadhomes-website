@@ -1,0 +1,30 @@
+---
+import BlogPostsPage from "../../components/BlogPostsPage.astro";
+
+interface Props {
+  paginate: Function;
+}
+export async function getStaticPaths(props: Props) {
+  const { paginate } = props;
+
+  // Use Astro.glob() to fetch all posts, and then sort them by date.
+  const posts = (await Astro.glob("./*.{md,mdx}"))
+    // remove posts that are pre-published
+    .filter(
+      (a) => new Date(a.frontmatter.pubDate).valueOf() < new Date().valueOf()
+    )
+    .sort(
+      (a, b) =>
+        new Date(b.frontmatter.pubDate).valueOf() -
+        new Date(a.frontmatter.pubDate).valueOf()
+    );
+  return paginate(posts, { pageSize: 12 });
+}
+
+// All paginated data is passed on the "page" prop
+const { page } = Astro.props;
+// const { data: posts, currentPage } = page;
+page.posts = page.data;
+---
+
+<BlogPostsPage {...page} />

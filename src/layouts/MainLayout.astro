@@ -1,5 +1,5 @@
 ---
-import BaseHead from "./BaseHead.astro";
+import BaseHead from "./Head.astro";
 
 export interface Props {
   title?: string;
@@ -15,7 +15,7 @@ const { props } = Astro;
   <head>
     <BaseHead {...props} />
   </head>
-  <body>
+  <body class="is-preload">
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
@@ -26,87 +26,98 @@ const { props } = Astro;
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <header>
-      <div class="menu">
-        <a href="/" rel="prefetch">Home</a> | <a href="/#gallery" rel="prefetch"
-          >Photos</a
-        > |
-        <a href="http://eepurl.com/hZq6AH">e-Newsletter</a> |
-        <a href="/waiting-list" rel="prefetch">Waiting List</a> |
-        <a href="/blog/1" rel="prefetch">News</a>
+    <!-- Wrapper -->
+    <div id="wrapper">
+      <!-- Header -->
+      <header id="header" class="alt">
+        <a href="index.html" class="logo"
+          ><strong>Gingerbread</strong> <span>Homes</span>
+        </a>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </header>
+
+      <!-- Menu -->
+      <nav id="menu">
+        <ul class="links">
+          <li><a href="./">Home</a></li>
+          <!-- <li><a href="landing.html">Landing</a></li> -->
+          <!-- <li><a href="generic.html">Generic</a></li> -->
+          <!-- <li><a href="elements.html">Elements</a></li> -->
+        </ul>
+        <ul class="actions stacked">
+          <li>
+            <a
+              href="https://gingerbreadhomes.us14.list-manage.com/subscribe?u=d54442221fb82d60b23ad497a&id=cc2fb6d4ec"
+              class="button primary fit">Get Started</a
+            >
+          </li>
+          <!-- <li><a href="#" class="button fit">Log In</a></li> -->
+        </ul>
+      </nav>
+
+      <!-- Banner -->
+      <section id="banner" class="major">
+        <div class="inner">
+          <header class="major">
+            <h1>Gingerbread Homes</h1>
+          </header>
+          <div class="content">
+            <p>Cottage Builder</p>
+            <ul class="actions">
+              <li>
+                <a
+                  href="https://gingerbreadhomes.us14.list-manage.com/subscribe?u=d54442221fb82d60b23ad497a&id=cc2fb6d4ec"
+                  class="button next scrolly">Get Started</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main -->
+      <div id="main">
+        <slot />
       </div>
-    </header>
 
-    <main>
-      <slot />
-    </main>
-
-    <footer>
-      Find out more <a href="/about-us" rel="prefetch">About Us</a>
-      <br />
-      <br />
-      Learn about our <a href="/sips" rel="prefetch">SIPS and NetZero</a> features
-      <br />
-      <br />
-      Ready to buy? Make a <a href="/down-payment" rel="prefetch"
-        >down payment</a
-      >!
-      <br />
-      <br />
-      Email: dajohnson162000@gingerbreadhomes.biz
-      <br />
-      Telephone: 403-715-6804
-      <br />
-      Address: Box 2695, Cardston, AB Canada T0K0K0
-      <br />
-      ©2024 All Rights Reserved
-      <br />
-      <ul class="share-buttons" data-source="gingerbreadhomes.biz">
-        <li>
-          <a
-            href="mailto:dajohnson162000@gingerbreadhomes.biz"
-            title="email"
-            target="_blank"
-            ><img alt="Email" src="/images/social/Email.png" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.facebook.com/COREStrength/"
-            href-share="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fgingerbreadhomes.biz&quote=Gingerbread%20homes"
-            title="Facebook"
-            target="_blank"
-            ><img alt="Facebook" src="/images/social/Facebook.png" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://twitter.com/dajohnson162000"
-            href-share="https://twitter.com/intent/tweet?source=http%3A%2F%2Fgingerbreadhomes.biz&text=Gingerbread%20homes:%20http%3A%2F%2Fgingerbreadhomes.biz&via=dajohnson162000"
-            target="_blank"
-            title="Twitter"
-            ><img alt="Twitter" src="/images/social/Twitter.png" />
-          </a>
-        </li>
-        <!-- <li>
-          <a
-            href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fgingerbreadhomes.biz&media=https://gingerbreadhomes.biz/images/logo_v3.webp&description=Family-Friendly%20Living%20Space!%0AAll-Natural%20Materials%0A21%20Years%20of%20Experience"
-            target="_blank"
-            title="Pin it"
-            ><img alt="Pin it" src="images/social/Pinterest.png"
-          /></a>
-        </li> -->
-        <li>
-          <a
-            href="https://www.linkedin.com/in/david-johnson-66454733/"
-            href-share="http://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Fgingerbreadhomes.biz&title=Gingerbread%20homes&summary=Family-Friendly%20Living%20Space!%0AAll-Natural%20Materials%0A21%20Years%20of%20Experience&source=http%3A%2F%2Fgingerbreadhomes.biz"
-            target="_blank"
-            title="LinkedIn"
-            rel="prefetch"
-            ><img alt="LinkedIn" src="/images/social/LinkedIn.png" />
-          </a>
-        </li>
-      </ul>
-    </footer>
+      <!-- Footer -->
+      <footer id="footer">
+        <div class="inner">
+          <ul class="icons">
+            <li>
+              <a href="#" class="icon brands alt fa-twitter"
+                ><span class="label">Twitter</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon brands alt fa-facebook-f"
+                ><span class="label">Facebook</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon brands alt fa-instagram"
+                ><span class="label">Instagram</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon brands alt fa-github"
+                ><span class="label">GitHub</span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="icon brands alt fa-linkedin-in"
+                ><span class="label">LinkedIn</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="copyright">
+            <li>&copy; Untitled</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
