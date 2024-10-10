@@ -30,7 +30,7 @@ const { props } = Astro;
     <div id="wrapper">
       <!-- Header -->
       <header id="header" class="alt">
-        <a href="index.html" class="logo"
+        <a href="/" class="logo"
           ><strong>Gingerbread</strong> <span>Homes</span>
         </a>
         <nav>
@@ -41,7 +41,8 @@ const { props } = Astro;
       <!-- Menu -->
       <nav id="menu">
         <ul class="links">
-          <li><a href="./">Home</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/blog/1">Blog</a></li>
           <!-- <li><a href="landing.html">Landing</a></li> -->
           <!-- <li><a href="generic.html">Generic</a></li> -->
           <!-- <li><a href="elements.html">Elements</a></li> -->
@@ -50,7 +51,12 @@ const { props } = Astro;
           <li>
             <a
               href="https://gingerbreadhomes.us14.list-manage.com/subscribe?u=d54442221fb82d60b23ad497a&id=cc2fb6d4ec"
-              class="button primary fit">Get Started</a
+              class="button primary fit icon solid fa-envelope"
+              >Subscribe to Newsletter</a
+            >
+
+            <a href="/down-payment" class="button fit next"
+              >Make A Down Payment</a
             >
           </li>
           <!-- <li><a href="#" class="button fit">Log In</a></li> -->
@@ -69,7 +75,8 @@ const { props } = Astro;
               <li>
                 <a
                   href="https://gingerbreadhomes.us14.list-manage.com/subscribe?u=d54442221fb82d60b23ad497a&id=cc2fb6d4ec"
-                  class="button next scrolly">Get Started</a
+                  class="button primary fit icon solid fa-envelope"
+                  >Subscribe to Newsletter</a
                 >
               </li>
             </ul>

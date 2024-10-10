@@ -1,8 +1,12 @@
 ---
+import ContactForm from "../components/ContactForm.astro";
+import CTAButton from "../components/CTAButton.astro";
+import CTAPayment from "../components/CTAPayment.astro";
+import CTASubscribe from "../components/CTASubscribe.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<MainLayout confetti={false}>
+<MainLayout confetti={true}>
   <!-- One -->
   <section id="one" class="tiles">
     <article>
@@ -61,6 +65,17 @@ import MainLayout from "../layouts/MainLayout.astro";
     </article>
   </section>
 
+  <section id="callout">
+    <div class="inner">
+      <ul class="actions">
+        <CTAButton
+          href="/blog/tree-fort-my-first-house"
+          label="READ: From a Humble Tree Fort To Family Company 🌳🏡"
+        />
+      </ul>
+    </div>
+  </section>
+
   <!-- Two -->
   <section id="two">
     <div class="inner">
@@ -86,18 +101,52 @@ import MainLayout from "../layouts/MainLayout.astro";
         </li>
       </ul>
       <ul class="actions">
-        <li>
-          <a
-            href="https://gingerbreadhomes.us14.list-manage.com/subscribe?u=d54442221fb82d60b23ad497a&id=cc2fb6d4ec"
-            class="button next">Subscribe Today</a
-          >
-        </li>
-        <li>
-          <a href="/down-payment" class="button next">Make A Down Payment</a>
-        </li>
+        <CTASubscribe />
+        <CTAPayment />
       </ul>
     </div>
   </section>
+
+  <section id="testimonials">
+    <div class="inner">
+      <div class="row">
+        <div class="col-6 col-12-small">
+          <h1>Testimonials</h1>
+
+          <ul class="alt">
+            <li>
+              <h3>"Cozy and very creative."</h3>
+              <blockquote>
+                "What I liked most about the GB Cottage prototype was that it
+                was cozy and very creative. I also liked the functional features
+                like the laundry chute, and I loved the Solarium!"
+              </blockquote>
+              <p>~Vicki B.</p>
+            </li>
+            <li>
+              <h3>"Awe and amazement!"</h3>
+              <blockquote>
+                "What I liked most about the GB Cottage prototype was the angles
+                and secret nooks. I was in awe and amazement! I will buy one
+                within the next 10 years."
+              </blockquote>
+              <p>~Miranda L.</p>
+            </li>
+            <li>
+              <h3>"I liked the adventure and surprises."</h3>
+              <blockquote>
+                "What I liked most about the GB Cottage prototype was the
+                adventure and surprises I experienced. The whole experience gave
+                me pure elation and bliss."
+              </blockquote>
+              <p>~Bill P.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Three -->
   <section id="three">
     <div
@@ -108,74 +157,12 @@ import MainLayout from "../layouts/MainLayout.astro";
         <h2>Starting Price</h2>
       </header>
       <h1>
-        <span style="font-size: 1rem; font-style: italic">just</span>
+        <span style="font-size: 1rem; font-style: italic">at</span>
         $189k
       </h1>
       <p>per cottage</p>
     </div>
   </section>
+
+  <ContactForm />
 </MainLayout>
-
-<!-- Contact -->
-<section id="contact">
-  <div class="inner">
-    <section>
-      <form method="post" action="#">
-        <div class="fields">
-          <div class="field half">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
-          </div>
-          <div class="field half">
-            <label for="email">Email</label>
-            <input type="text" name="email" id="email" />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" rows="6"></textarea>
-          </div>
-        </div>
-        <ul class="actions">
-          <li>
-            <input type="submit" value="Send Message" class="primary" />
-          </li>
-          <li><input type="reset" value="Clear" /></li>
-        </ul>
-      </form>
-    </section>
-    <section class="split">
-      <section>
-        <div class="contact-method">
-          <span class="icon solid alt fa-envelope"></span>
-          <h3>Email</h3>
-          <a href="#">dajohnson162000@gingerbreadhomes.biz</a>
-        </div>
-      </section>
-      <section>
-        <div class="contact-method">
-          <span class="icon solid alt fa-phone"></span>
-          <h3>Phone</h3>
-          <span>403-715-6804</span>
-        </div>
-      </section>
-      <section>
-        <div class="contact-method">
-          <span class="icon solid alt fa-home"></span>
-          <h3>Address</h3>
-          <span>Box 2695<br />Cardston, AB Canada<br />T0K0K0</span>
-        </div>
-      </section>
-    </section>
-  </div>
-</section>
-
-<style>
-  .img-house1 {
-    background-image: url("/gallery/IMG_1359-2.JPG");
-    background-repeat: no-repeat;
-    /* fit image to screen */
-    background-size: cover;
-    /* dim opacity */
-    background-blend-mode: multiply;
-  }
-</style>

@@ -1,0 +1,132 @@
+---
+---
+
+<!-- Contact -->
+<section id="contact">
+  <div class="inner">
+    <section>
+      <form method="post" class="contact-us" action="#">
+        <div class="fields">
+          <div class="field half">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="field half">
+            <label for="email">Email</label>
+            <input type="text" name="from" id="email" />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea name="text" id="message" rows="6"></textarea>
+          </div>
+          <div class="field">
+            <span class="answer-label"
+              >* Human Question: Today's Day of Month Is...</span
+            >
+            <input
+              type="number"
+              name="answer"
+              placeholder="A Number"
+              size="4"
+              style="width: 10rem;"
+            />
+          </div>
+        </div>
+        <ul class="actions">
+          <li>
+            <input type="submit" value="Send Message" class="primary" />
+          </li>
+          <li><input type="reset" value="Clear" /></li>
+        </ul>
+      </form>
+    </section>
+    <section class="split">
+      <section>
+        <div class="contact-method">
+          <span class="icon solid alt fa-envelope"></span>
+          <h3>Email</h3>
+          <a href="#">dajohnson162000@gingerbreadhomes.biz</a>
+        </div>
+      </section>
+      <section>
+        <div class="contact-method">
+          <span class="icon solid alt fa-phone"></span>
+          <h3>Phone</h3>
+          <span>403-715-6804</span>
+        </div>
+      </section>
+      <section>
+        <div class="contact-method">
+          <span class="icon solid alt fa-home"></span>
+          <h3>Address</h3>
+          <span>Box 2695<br />Cardston, AB Canada<br />T0K0K0</span>
+        </div>
+      </section>
+    </section>
+  </div>
+</section>
+
+<style>
+  form input:focus,
+  form textarea:focus {
+    border: 2px solid orange !important;
+  }
+  input[type="number"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background-color: rgba(144, 144, 144, 0.25);
+    border-radius: 3px;
+    border: none;
+    color: inherit;
+    outline: 0;
+    text-decoration: none;
+  }
+  span.answer-label {
+    display: inline-block;
+    margin: 2rem 0;
+  }
+</style>
+
+<script>
+  // Find our component DOM on the page.
+  const forms = document.querySelectorAll(
+    "form.contact-us"
+  ) as NodeListOf<HTMLFormElement>;
+
+  // Add event listeners to form submit button.
+  forms.forEach((form) => {
+    form.addEventListener("submit", (evt: any) => {
+      evt.preventDefault();
+
+      if (!evt.target) return;
+
+      const data = new FormData(evt.target);
+      const values = Object.fromEntries(data.entries());
+      // values.name = [values.firstName, values.lastName].join(" ").trim();
+
+      if (!values.answer) {
+        alert("Human Question required, robot!");
+        return;
+      }
+
+      fetch("/api/email", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(values),
+      })
+        .then(() => {
+          sub.value = "Sent!";
+          alert("Email Sent!");
+        })
+        .catch(() => {
+          sub.value = "Error";
+          alert("Error Sending Email -- Please Try Again Later");
+        });
+
+      const sub = form.querySelector("[type=submit]") as HTMLButtonElement;
+      sub.disabled = true;
+    });
+  });
+</script>

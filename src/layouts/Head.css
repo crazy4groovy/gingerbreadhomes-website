@@ -19,3 +19,7 @@ code {
     "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New",
     monospace;
 }
+
+img {
+  max-width: 100%;
+}

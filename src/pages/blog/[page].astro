@@ -11,10 +11,14 @@ export async function getStaticPaths(props: Props) {
   const posts = (await Astro.glob("./*.{md,mdx}"))
     // remove posts that are pre-published
     .filter(
-      (a) => new Date(a.frontmatter.pubDate).valueOf() < new Date().valueOf()
+      (a: { frontmatter: { pubDate: string | number | Date } }) =>
+        new Date(a.frontmatter.pubDate).valueOf() < new Date().valueOf()
     )
     .sort(
-      (a, b) =>
+      (
+        a: { frontmatter: { pubDate: string | number | Date } },
+        b: { frontmatter: { pubDate: string | number | Date } }
+      ) =>
         new Date(b.frontmatter.pubDate).valueOf() -
         new Date(a.frontmatter.pubDate).valueOf()
     );

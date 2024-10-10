@@ -37,9 +37,9 @@ const {
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <meta name="generator" content={Astro.generator} />
-<link rel="icon" type="image/x-icon" href="favicon.svg" />
+<link rel="icon" type="image/x-icon" href="/favicon.webp" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -85,22 +85,22 @@ const {
 /> -->
 
 <!-- STYLES -->
-<link rel="stylesheet" href="assets/css/animate.css" />
-<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="/assets/css/animate.css" />
+<link rel="stylesheet" href="/assets/css/main.css" />
 <noscript>
-  <link rel="stylesheet" href="assets/css/noscript.css" />
+  <link rel="stylesheet" href="/assets/css/noscript.css" />
 </noscript>
-{css && <link rel="stylesheet" href={`assets/css/styles.${css}.css`} />}
+{css && <link rel="stylesheet" href={`/assets/css/styles.${css}.css`} />}
 
 <!-- SCRIPTS -->
-<script is:inline src="assets/js/jquery.min.js"></script>
-<script is:inline src="assets/js/jquery.scrolly.min.js"></script>
-<script is:inline src="assets/js/jquery.scrollex.min.js"></script>
-<script is:inline src="assets/js/browser.min.js"></script>
-<script is:inline src="assets/js/breakpoints.min.js"></script>
-<script is:inline src="assets/js/util.js"></script>
-<!-- <script is:inline src="./assets/js/main.js"></script> -->
-<script is:inline async defer src="./assets/js/main.js"></script>
+<script is:inline src="/assets/js/jquery.min.js"></script>
+<script is:inline src="/assets/js/jquery.scrolly.min.js"></script>
+<script is:inline src="/assets/js/jquery.scrollex.min.js"></script>
+<script is:inline src="/assets/js/browser.min.js"></script>
+<script is:inline src="/assets/js/breakpoints.min.js"></script>
+<script is:inline src="/assets/js/util.js"></script>
+<!-- <script is:inline src="/assets/js/main.js"></script> -->
+<script is:inline async defer src="/assets/js/main.js"></script>
 
 <script
   is:inline
