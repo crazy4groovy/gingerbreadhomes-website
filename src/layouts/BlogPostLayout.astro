@@ -25,24 +25,32 @@ const timeStamp = pubDate
   : null;
 ---
 
-<MainLayout css="blog" title={`Blog | ${title}`} confetti>
+<MainLayout title={`Blog | ${title}`} confetti>
   <section class="brand wow fadeIn" data-wow-delay="0s">
-    <div class="wow bounceIn" data-wow-delay="0s">
-      <img class="rounded" src="/images/logo_v3.webp" alt="logo" />
-      <h1>{title}</h1>
+    <div class="inner">
+      <div class="wow bounceIn" data-wow-delay="0s">
+        <!-- <img
+          class="rounded"
+          src="/images/logo_v3.webp"
+          alt="logo"
+          loading="lazy"
+          width="50px"
+        /> -->
+        <h1>{title}</h1>
+      </div>
     </div>
+
+    <article>
+      {heroImage && <img class="hero" src={heroImage} alt="" />}
+
+      {timeStamp && <time>{timeStamp}</time>}
+
+      <div class="hr"></div>
+      <!-- <hr /> -->
+
+      <slot /><!-- Article Post inserted here -->
+    </article>
   </section>
-
-  <article>
-    {heroImage && <img class="hero" src={heroImage} alt="" />}
-
-    {timeStamp && <time>{timeStamp}</time>}
-
-    <div class="hr"></div>
-    <!-- <hr /> -->
-
-    <slot /><!-- Article Post inserted here -->
-  </article>
 </MainLayout>
 
 <style>

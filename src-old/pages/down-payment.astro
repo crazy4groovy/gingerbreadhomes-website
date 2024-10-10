@@ -1,0 +1,46 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="DOWN PAYMENT">
+  <section class="brand wow fadeIn" data-wow-delay="0s">
+    <div class="wow bounceIn" data-wow-delay="0s">
+      <img class="rounded" src="/images/logo_v3.webp" alt="logo" />
+      <h1>gingerbread homes</h1>
+      <h2>DOWN PAYMENT</h2>
+    </div>
+  </section>
+  <section class="intro">
+    <div>
+      <h2>Make your <b>Down Payment</b> of</h2>
+      <h1 style="padding-bottom: 2rem">$1,000 USD</h1>
+      <h2>and Reserve Your Place!</h2>
+      <br />
+
+      <!-- PAYPAL Start -->
+      <div>
+        <a
+          href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=YHVNDGHB2WDPJ"
+        >
+          <!-- <input style="width: 200px; margin: 0 auto" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> -->
+          <!-- <input style="width: 400px; margin: 0 auto" type="image" src="./images/paypal-credit-cards.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<br /> -->
+          <input
+            class="button"
+            style="width: 200px; margin: 0 auto"
+            type="image"
+            src="./images/paypal-paynow-button.png"
+            name="submit"
+            alt="PayPal - The safer, easier way to pay online!"
+          />
+          <!-- <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1"> -->
+        </a>
+      </div>
+      <!-- PAYPAL End -->
+      <hr />
+      <p>
+        Or, you can instead sign up on the waiting list <a href="./waiting-list">here</a>!
+      </p>
+    </div>
+  </section>
+</MainLayout>

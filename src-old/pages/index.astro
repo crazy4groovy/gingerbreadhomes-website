@@ -1,0 +1,200 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout css="main" confetti>
+  <section class="brand wow fadeIn" data-wow-delay="0s">
+    <div class="wow bounceIn" data-wow-delay="0s">
+      <img class="rounded" src="/images/logo_v3.webp" alt="logo" />
+      <h1>gingerbread homes</h1>
+      <h2>COTTAGE BUILDER</h2>
+    </div>
+  </section>
+  <section class="cta">
+    <div>
+      <button
+        class="main"
+        onclick="javascript:document.location='/blog/tree-fort-my-first-house'"
+      >
+        READ: From a Humble Tree Fort To Family Company 🌳🏡
+      </button>
+    </div>
+  </section>
+  <section class="intro">
+    <div class="img-house1">
+      <h1>Fun, family-friendly spaces</h1>
+      <h1>Built-in furniture, office, library</h1>
+      <h1>Self-sufficient, green-housing, solar powered</h1>
+      <h1>Affordable, robotically built</h1>
+      <h1>Nostalgic, cottage designs</h1>
+    </div>
+  </section>
+  <section class="cta">
+    <div>
+      <button
+        class="main"
+        onclick="javascript:document.location='http://eepurl.com/hZq6AH'"
+      >
+        Subscribe today!
+      </button>
+    </div>
+  </section>
+  <section class="details">
+    <div>
+      <h1>Why is this better?</h1>
+      <p>
+        Traditionally, home space has been valued in the number of
+        <i>square feet</i>.
+      </p>
+      <p>We'd rather maximize designed space in <i>functionality</i>.</p>
+      <hr />
+      <ul>
+        <li>Typically less than 900 sq/ft (footprint: 13' x 28')</li>
+        <li>Fixed components like bookcases, swings and love seats</li>
+        <li>Very little movable furniture</li>
+        <li>Better use of cubic space</li>
+        <li>Little is better, efficiently meeting a need!</li>
+        <li>
+          3D CAD modeled to precision (see how with
+          <a
+            href="https://www.alibre.com/customer-story-gingerbread-homes/"
+            target="_blank">Alibre</a
+          >!)
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="testimonials">
+    <div class="wow fadeInRight" data-wow-delay="0.5s">
+      <div class="card">
+        <h3>"This is what I want for my future family home. Great work!"</h3>
+        <p>Medium length description with a few more words here.</p>
+        <div class="visual"></div>
+      </div>
+      <div class="card">
+        <h3>"I like the functional features like the laundry chute."</h3>
+        <p>
+          Long Description. Lorem ipsum dolor sit, amet consectetur adipisicing
+          elit.
+        </p>
+        <div class="visual"></div>
+      </div>
+      <div class="card">
+        <h3>
+          "Like Lemony Snickets...It's like visiting Disneyland as a child."
+        </h3>
+        <p>Short Description.</p>
+        <div class="visual"></div>
+      </div>
+      <div class="card">
+        <h3>
+          "Like Lemony Snickets...It's like visiting Disneyland as a child."
+        </h3>
+        <p>Short Description.</p>
+        <div class="visual"></div>
+      </div>
+    </div>
+  </section>
+  <section class="cta">
+    <div>
+      <button
+        class="main"
+        onclick="javascript:document.location='http://eepurl.com/hZq6AH'"
+      >
+        Subscribe today!
+      </button>
+    </div>
+  </section>
+  <section class="principles">
+    <div class="wow fadeInLeft" data-wow-delay="0.5s">
+      <h1>Principles of Cottage Living</h1>
+      <ul>
+        <li>Decide the purpose first.</li>
+        <li>If the occupant is happy, then it's good design!</li>
+        <li>Study the classics, but be bold with form.</li>
+        <li>Good design doesn't cost more, it might just take more time.</li>
+      </ul>
+    </div>
+  </section>
+  <section class="gallery" id="gallery">
+    <div>
+      <h1>🎞️ PHOTO GALLERY 🎞️</h1>
+      <div><button class="gallery-show">Click To See</button></div>
+      <p
+        style="font-size: 1rem; opacity: 0.8; display: none"
+        class="gallery-instructions"
+      >
+        ⏪ flick images sideways ⏩
+      </p>
+      <div id="flick" class="flicking-viewport gallery">
+        <div class="flicking-camera"></div>
+      </div>
+    </div>
+  </section>
+  <!--section class="accessories">
+    <div>
+      <h1>ACCESSORIES</h1>
+      <h2 class="counter" data-type="counter">Counters</h2>
+      <h2 class="handle" data-type="handle">Handles</h2>
+      <h2 class="hanger" data-type="hanger">Hangers</h2>
+      <h2 class="ladder" data-type="ladder">Ladders</h2>
+      <h2 class="railing" data-type="railing">Railings</h2>
+      <h2 class="rod" data-type="rod">Rods</h2>
+      <h2 class="seat" data-type="seat">Seats</h2>
+      <h2 class="shelf" data-type="shelf">Shelves</h2>
+    </div>
+  </section>
+  <section class="floor-plans">
+    <div class="wow fadeIn" data-wow-delay="0.5s">
+      <h1>FLOOR PLANS</h1>
+      <iframe
+        class="youtube"
+        src="https://www.youtube-nocookie.com/embed/adGrg2elbvE"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <iframe
+        class="youtube"
+        src="https://www.youtube-nocookie.com/embed/SsP1GzChO0E"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <hr />
+      <h2>Blueprints</h2>
+      <img src="./images/blueprint-buckwheat.jpg" alt="" />
+      <!- <hr />
+			<h2>- video: drone fly-over</h2>
+			<h2>- *virtual 3D tour*</h2> ->
+    </div>
+  </section-->
+  <section class="listing-price">
+    <div>
+      <h1>Starting Price of</h1>
+      <h1>$189k</h1>
+      <h2>per cottage</h2>
+    </div>
+  </section>
+  <section class="cta">
+    <div>
+      <button
+        class="main"
+        onclick="javascript:document.location='http://eepurl.com/hZq6AH'"
+      >
+        Subscribe today!
+      </button>
+    </div>
+  </section>
+</MainLayout>
+
+<style>
+  .img-house1 {
+    background-image: url("/gallery/IMG_1359-2.JPG");
+    background-repeat: no-repeat;
+    /* fit image to screen */
+    background-size: cover;
+    /* dim opacity */
+    background-blend-mode: multiply;
+  }
+</style>

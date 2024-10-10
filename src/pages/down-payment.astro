@@ -3,18 +3,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="DOWN PAYMENT">
-  <section class="brand wow fadeIn" data-wow-delay="0s">
-    <div class="wow bounceIn" data-wow-delay="0s">
-      <img class="rounded" src="/images/logo_v3.webp" alt="logo" />
-      <h1>gingerbread homes</h1>
-      <h2>DOWN PAYMENT</h2>
-    </div>
-  </section>
-  <section class="intro">
-    <div>
-      <h2>Make your <b>Down Payment</b> of</h2>
-      <h1 style="padding-bottom: 2rem">$1,000 USD</h1>
-      <h2>and Reserve Your Place!</h2>
+  <section id="one">
+    <div class="inner">
+      <header class="major">
+        <h1>Down Payment</h1>
+      </header>
+
+      <h2 id="content">Make your <b>Down Payment</b> of</h2>
+      <h1 style="font-size: 3rem">$1,000 USD</h1>
+      <h4>and Reserve Your Place!</h4>
       <br />
 
       <!-- PAYPAL Start -->
@@ -24,7 +21,7 @@ import MainLayout from "../layouts/MainLayout.astro";
         >
           <!-- <input style="width: 200px; margin: 0 auto" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!"> -->
           <!-- <input style="width: 400px; margin: 0 auto" type="image" src="./images/paypal-credit-cards.jpg" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<br /> -->
+          <!-- <br /> -->
           <input
             class="button"
             style="width: 200px; margin: 0 auto"
@@ -39,8 +36,19 @@ import MainLayout from "../layouts/MainLayout.astro";
       <!-- PAYPAL End -->
       <hr />
       <p>
-        Or, you can instead sign up on the waiting list <a href="./waiting-list">here</a>!
+        Or, you can instead sign up on the waiting list <a href="./waiting-list"
+          >here</a
+        >!
       </p>
     </div>
   </section>
 </MainLayout>
+
+<style>
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin-bottom: 0;
+  }
+</style>
