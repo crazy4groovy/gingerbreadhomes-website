@@ -11,3 +11,14 @@ const { href, label, className = "" } = Astro.props;
 <li>
   <a href={href} class={`button fit icon ${className}`}>{label}</a>
 </li>
+
+<style>
+  a {
+    display: inline-block !important;
+    max-width: 100vw;
+    white-space: wrap !important;
+  }
+  header.major> :first-child {
+    width: 100vw !important;
+  }
+</style>
