@@ -363,7 +363,6 @@ async function initTestimonials() {
 	const testimonialList = testimonialSection.querySelector('#testimonials ul.testimonials');
 
 	data.forEach((q) => {
-		console.log(q);
 		const testimonialHTML = `
 			<li>
 				<img class="avatar" src="./testimonials/${q.avatar}"></img>
