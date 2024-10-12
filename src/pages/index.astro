@@ -111,9 +111,9 @@ import MainLayout from "../layouts/MainLayout.astro";
     <div class="inner">
       <div class="row">
         <div class="col-6 col-12-small">
-          <h1>Testimonials</h1>
+          <h1>Reviews</h1>
 
-          <ul class="alt">
+          <ul class="alt testimonials">
             <li>
               <h3>"Cozy and very creative."</h3>
               <blockquote>
@@ -122,24 +122,6 @@ import MainLayout from "../layouts/MainLayout.astro";
                 like the laundry chute, and I loved the Solarium!"
               </blockquote>
               <p>~Vicki B.</p>
-            </li>
-            <li>
-              <h3>"Awe and amazement!"</h3>
-              <blockquote>
-                "What I liked most about the GB Cottage prototype was the angles
-                and secret nooks. I was in awe and amazement! I will buy one
-                within the next 10 years."
-              </blockquote>
-              <p>~Miranda L.</p>
-            </li>
-            <li>
-              <h3>"I liked the adventure and surprises."</h3>
-              <blockquote>
-                "What I liked most about the GB Cottage prototype was the
-                adventure and surprises I experienced. The whole experience gave
-                me pure elation and bliss."
-              </blockquote>
-              <p>~Bill P.</p>
             </li>
           </ul>
         </div>
@@ -166,3 +148,15 @@ import MainLayout from "../layouts/MainLayout.astro";
 
   <ContactForm />
 </MainLayout>
+
+<style is:inline>
+  .testimonials .avatar {
+    display: block;
+    width: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10%;
+    float: left;
+    margin-inline: 1rem;
+  }
+</style>

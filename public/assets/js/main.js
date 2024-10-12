@@ -344,6 +344,36 @@ function init($) {
 
 		});
 
+	initTestimonials();
 }
 
 setTimeout(() => init(jQuery), 1);
+
+async function initTestimonials() {
+	let data = await fetch("../testimonials/data.json").then((r) => r.json());
+	let times = (Math.random() * data.length) | 0;
+	while (--times > 0) {
+		data.unshift(data.pop());
+	}
+	data = data.slice(0, 4);
+
+	// Clear existing testimonials
+	const testimonialSection = document.querySelector("#testimonials ul.testimonials");
+	testimonialSection.innerHTML = '<ul class="alt testimonials"></ul>';
+	const testimonialList = testimonialSection.querySelector('#testimonials ul.testimonials');
+
+	data.forEach((q) => {
+		console.log(q);
+		const testimonialHTML = `
+			<li>
+				<img class="avatar" src="./testimonials/${q.avatar}"></img>
+				<h3>"${q.teaser}"</h3>
+				<blockquote>
+				"${q.quote}"
+				</blockquote>
+				<p>~${q.name} ⭐⭐⭐⭐⭐</p>
+			</li>
+		`;
+		testimonialList.insertAdjacentHTML('beforeend', testimonialHTML);
+	});
+}
