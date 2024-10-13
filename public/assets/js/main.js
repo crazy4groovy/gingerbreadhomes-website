@@ -345,6 +345,7 @@ function init($) {
 		});
 
 	initTestimonials();
+	initGallery();
 }
 
 setTimeout(() => init(jQuery), 1);
@@ -375,4 +376,58 @@ async function initTestimonials() {
 		`;
 		testimonialList.insertAdjacentHTML('beforeend', testimonialHTML);
 	});
+}
+
+async function initGallery() {
+	const galleryImages = await fetch("../gallery/list.json")
+		.then((r) => r.json());
+
+	// console.log(JSON.stringify(galleryImages, null, 2));
+
+	const flicking = new Flicking("#flick.gallery", {
+		align: "center",
+		preventDefaultOnDrag: true,
+		interruptable: true,
+		resizeOnContentsReady: true,
+		duration: 300,
+		autoResize: true,
+		zIndex: 2000,
+		threshold: 40,
+		// Other options:
+		// bound: true,
+		// circular: true,
+		// adaptive: true,
+		// renderOnlyVisible: true,
+		// easing: x => 1 - Math.pow(1 - x, 3), // Ease-out cubic
+	});
+
+	const galleryBody = galleryImages.map((img) => {
+		const desc = [img.title, img.description].filter(Boolean).join(' -- ')
+		return `<div class="flicking-panel">
+    <img loading="lazy" alt="${desc}" title="${desc}" src=".${img.image}" draggable="false" ondragstart="return false;">
+    </div>`;
+	});
+
+	function clickShowGallery() {
+		flicking.append(galleryBody);
+
+		// Wait for all images to load before resizing
+		const imagePromises = Array.from(document.querySelectorAll(".flicking-panel img"))
+			.map(img => {
+				if (img.complete) return Promise.resolve();
+				return new Promise(resolve => {
+					img.onload = resolve;
+					img.onerror = resolve; // Handle error cases as well
+				});
+			});
+
+		Promise.all(imagePromises).then(() => {
+			flicking.resize();
+		});
+
+		document.querySelector("button.gallery-show").style.display = "none";
+		document.querySelector("p.gallery-instructions").style.display = "block";
+	}
+
+	document.querySelector("#gallery .gallery-show").onclick = clickShowGallery;
 }
