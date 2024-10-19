@@ -409,15 +409,17 @@ async function initGallery() {
 	});
 
 	function clickShowGallery() {
+		if (!document.querySelector("#gallery")) return;
+
 		flicking.append(galleryBody);
 
 		// Wait for all images to load before resizing
 		const imagePromises = Array.from(document.querySelectorAll(".flicking-panel img"))
 			.map(img => {
-				if (img.complete) return Promise.resolve();
 				return new Promise(resolve => {
+					if (img.complete) resolve();
 					img.onload = resolve;
-					img.onerror = resolve; // Handle error cases as well
+					img.onerror = resolve; // Ignore errors
 				});
 			});
 
@@ -425,9 +427,14 @@ async function initGallery() {
 			flicking.resize();
 		});
 
-		document.querySelector("button.gallery-show").style.display = "none";
+		document.querySelector("#gallery button.gallery-show").style.display = "none";
 		document.querySelector("p.gallery-instructions").style.display = "block";
 	}
 
-	document.querySelector("#gallery .gallery-show").onclick = clickShowGallery;
+	document.querySelector("#gallery button.gallery-show").onclick = clickShowGallery;
+	// by default, show the gallery after 2 seconds
+	setTimeout(() => {
+		clickShowGallery();
+	}, 2000);
+
 }

@@ -2240,6 +2240,7 @@ ul {
 
 ul li {
 	padding-left: 0.5em;
+	max-width: 80vw;
 }
 
 ul.alt {
